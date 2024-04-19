@@ -14,5 +14,9 @@
   "type": "module",
   "workspaces": [
     "src/TESTREACT_frontend"
-  ]
+  ],
+  "devDependencies": {
+    "@dfinity/auth-client": "^1.2.0",
+    "@dfinity/identity": "^1.2.0"
+  }
 }
