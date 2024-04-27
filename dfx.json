@@ -1,0 +1,26 @@
+{
+  "canisters": {
+    "TESTREACT_backend": {
+      "main": "src/TESTREACT_backend/main.mo",
+      "type": "motoko"
+    },
+    "TESTREACT_frontend": {
+      "dependencies": [
+        "TESTREACT_backend"
+      ],
+      "source": [
+        "src/TESTREACT_frontend/dist"
+      ],
+      "type": "assets",
+      "workspace": "TESTREACT_frontend"
+    }
+  },
+  "defaults": {
+    "build": {
+      "args": "",
+      "packtool": ""
+    }
+  },
+  "output_env_file": ".env",
+  "version": 1
+}
