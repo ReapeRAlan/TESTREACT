@@ -1,0 +1,68 @@
+/* src/styles/commonStyles.css */
+
+body {
+  background-color: #000; /* Fondo oscuro */
+  color: #fff; /* Texto claro */
+  font-family: 'Arial', sans-serif;
+}
+
+.nav-bar {
+  background: #1DA1F2; /* Azul Twitter */
+  padding: 1rem;
+  margin-bottom: 2rem; /* Separación entre el nav y el contenido */
+}
+
+.nav-link {
+  color: #fff;
+  text-decoration: none;
+  margin-right: 2rem;
+}
+
+.button {
+  background-color: #1DA1F2; /* Azul Twitter */
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  margin: 5px;
+  border-radius: 20px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.button:hover {
+  background-color: #1A91DA; /* Azul más claro */
+}
+
+.form-input {
+  padding: 10px;
+  margin: 5px 0;
+  border-radius: 5px;
+  border: 1px solid #333;
+  background-color: #121212;
+  color: #fff;
+}
+
+.form-input::placeholder {
+  color: #bbb;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 20px 0;
+}
+
+th, td {
+  padding: 10px;
+  border: 1px solid #ddd; /* Un borde claro para los elementos de la tabla */
+}
+
+th {
+  background-color: #1DA1F2; /* Azul Twitter para los encabezados */
+  color: #fff;
+}
+
+tr:nth-child(even) {
+  background-color: #222; /* Filas alternadas con un color ligeramente más claro */
+}
+

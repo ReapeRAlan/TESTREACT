@@ -1,0 +1,56 @@
+/* src/styles/ConsultaAlumnos.css */
+
+.alumnos-table-container {
+    padding: 1rem;
+    background-color: #000; /* Fondo oscuro para todo el contenedor */
+    min-height: 100vh; /* Altura mínima para que tome todo el viewport */
+  }
+  
+  .alumnos-table {
+    border: 1px solid #2d2d2d;
+    border-radius: 10px; /* Bordes redondeados para la tabla */
+    overflow: hidden; /* Ocultar el overflow para mantener los bordes redondeados */
+    background-color: #121212; /* Fondo de la tabla */
+    margin: 0 auto; /* Centrar la tabla horizontalmente */
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5); /* Sombra para la tabla */
+    color: #fff; /* Texto en blanco para la legibilidad */
+    width: auto; /* Ancho automático según el contenido */
+    max-width: 100%; /* Asegurar que la tabla no sea más ancha que el viewport */
+  }
+  
+  .alumnos-table th,
+  .alumnos-table td {
+    padding: 12px 15px; /* Espaciado interno para celdas */
+    border-bottom: 1px solid #2d2d2d; /* Borde entre filas */
+  }
+  
+  .alumnos-table th {
+    background-color: #1DA1F2; /* Azul Twitter para los encabezados */
+    color: #fff; /* Texto en blanco para los encabezados */
+  }
+  
+  .alumnos-table tr {
+    transition: background-color 0.3s; /* Transición suave para el efecto hover */
+  }
+
+
+.alumnos-table tr:nth-child(even) {
+    background-color: #121212; /* Cambia este color para que coincida con el fondo de las filas impares */
+  }
+  
+.alumnos-table tr:nth-child(odd) {
+    background-color: #2e2e2e; /* Cambia este color para que coincida con el fondo de las filas impares */
+  }
+  
+  .alumnos-table tr:hover {
+    background-color: #1A91DA; /* Azul más claro al pasar el ratón */
+  }
+  
+  /* Si deseas centrar el texto de las celdas, puedes agregar esto */
+  .alumnos-table td {
+    text-align: center;
+  }
+  
+.table-heading{
+text-align: center;
+}

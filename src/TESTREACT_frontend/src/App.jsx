@@ -1,30 +1,30 @@
-import { useState } from 'react';
-import { TESTREACT_backend } from 'declarations/TESTREACT_backend';
+// src/testreact_frontend/App.jsx
+
+import React from 'react';
+import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
+import ConsultaAlumnos from './components/ConsultaAlumnos';
+import CargaAlumnos from './components/CargaAlumnos';
+import Inicio from './components/inicio';
+import './styles/commonStyles.css'; 
+
+function Nav() {
+  return (
+    <nav className="nav-bar">
+      <Link to="/" className="nav-link">Inicio</Link> 
+    </nav>
+  );
+}
 
 function App() {
-  const [greeting, setGreeting] = useState('');
-
-  function handleSubmit(event) {
-    event.preventDefault();
-    const name = event.target.elements.name.value;
-    TESTREACT_backend.greet(name).then((greeting) => {
-      setGreeting(greeting);
-    });
-    return false;
-  }
-
   return (
-    <main>
-      <img src="/logo2.svg" alt="DFINITY logo" />
-      <br />
-      <br />
-      <form action="#" onSubmit={handleSubmit}>
-        <label htmlFor="name">Enter your name: &nbsp;</label>
-        <input id="name" alt="Name" type="text" />
-        <button type="submit">Click Me!</button>
-      </form>
-      <section id="greeting">{greeting}</section>
-    </main>
+    <Router>
+      <Nav /> {/* Esto hará que el nav aparezca en todas las páginas */}
+      <Routes>
+        <Route path="/" element={<Inicio />} />
+        <Route path="/consultar" element={<ConsultaAlumnos />} />
+        <Route path="/cargar" element={<CargaAlumnos />} />
+      </Routes>
+    </Router>
   );
 }
 
