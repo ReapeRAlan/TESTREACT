@@ -1,4 +1,4 @@
-// src/testreact_frontend/components/Inicio.jsx
+// src/testreact_frontend/components/inicio.jsx
 
 import React from 'react';
 import { Link } from 'react-router-dom';
@@ -13,6 +13,7 @@ function Inicio() {
       <div className="welcome-message">Bienvenidos a la Gestión de Alumnos</div>
       <Link to="/consultar" className="nav-link"><button className="button">Consultar Alumnos</button></Link>
       <Link to="/cargar" className="nav-link"><button className="button">Cargar Alumnos</button></Link>
+      <Link to="/login" className="nav-link"><button className="button">Login</button></Link>
     </div>
   );
 }

@@ -1,0 +1,29 @@
+/* src/styles/CargaAlumnos.css */
+
+.cargar-alumnos-container {
+    padding: 1rem;
+  }
+  
+  .cargar-alumnos-form {
+    margin-top: 1rem;
+  }
+  
+  .cargar-alumnos-form input,
+  .cargar-alumnos-form button {
+    margin-bottom: 0.5rem; /* Espaciado entre campos */
+  }
+  
+  /* Puedes reutilizar .form-input del commonStyles.css para los inputs */
+  
+  .cargar-alumnos-form button {
+    background-color: #1DA1F2; /* Azul Twitter */
+    color: #fff;
+    padding: 10px 20px;
+    border-radius: 20px;
+    cursor: pointer;
+  }
+  
+  .cargar-alumnos-form button:hover {
+    background-color: #1A91DA; /* Azul más claro al pasar el ratón */
+  }
+  

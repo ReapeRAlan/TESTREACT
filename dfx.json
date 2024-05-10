@@ -4,6 +4,11 @@
       "main": "src/TESTREACT_backend/main.mo",
       "type": "motoko"
     },
+    "canisterCRUD": {
+      "main": "src/canisterCRUD/main.mo",
+      "type": "motoko"
+
+    },
     "TESTREACT_frontend": {
       "dependencies": [
         "TESTREACT_backend"
