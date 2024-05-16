@@ -9,6 +9,10 @@
       "type": "motoko"
 
     },
+    "counter":{
+      "main": "src/counter/main.mo",
+      "type": "motoko"
+    },
     "TESTREACT_frontend": {
       "dependencies": [
         "TESTREACT_backend"

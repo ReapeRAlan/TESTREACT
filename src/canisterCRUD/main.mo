@@ -8,6 +8,8 @@ import Debug "mo:base/Debug";
 
 actor CredencialesCRUD {
 	
+
+
 	
     
 
@@ -25,9 +27,12 @@ actor CredencialesCRUD {
 		return areaID;
 	};
 	
-	public query ({caller}) func whoami() : async Principal {
-		return caller;
-	};
+	
+    public shared (msg) func whoami() : async Principal {
+        msg.caller
+    };
+
+
 
 	public shared (msg) func crearArea(nombre: Text) : async () {
 		let area = {nombre=nombre};
@@ -58,20 +63,20 @@ actor CredencialesCRUD {
 			};
 			case (?areaActual) {
 				let nuevaArea: Area = {nombre=nombre};
-				listaAreas.put(id, nuevaArea);
-				Debug.print("Area actualizada: " # id);
-				return true;
-			};
-		};
+                    listaAreas.put(id, nuevaArea);
+                    Debug.print("Area actualizada: " # id);
+                    return true;
+                };
+            };
 
-	};
+        };
 
-	public func eliminarArea (id: Text) : async Bool {
-		let area : ?Area = listaAreas.get(id);
-		switch (area) {
-			case (null) {
-				return false;
-			};
+        public func eliminarArea (id: Text) : async Bool {
+            let area : ?Area = listaAreas.get(id);
+            switch (area) {
+                case (null) {
+                    return false;
+                };
 			case (_) {
 				ignore listaAreas.remove(id);
 				Debug.print("Área eliminadaD: " # id);
@@ -165,7 +170,10 @@ actor CredencialesCRUD {
 	public type ImageObject = [Nat8];
 
 	type alumnoID = Nat32;
+	type idAlumno = Text;
+
 	stable var alumnoID: alumnoID = 0;
+	
 	
 	private func generaAlumnoID() : Nat32 {
 		alumnoID += 1;
@@ -183,6 +191,7 @@ actor CredencialesCRUD {
 		idCarrera: Nat32;
 		semestre: Nat8;
 		sexo: Text;
+		idAlumno: Text
 		// image: ImageObject;
 	};
 
@@ -199,11 +208,13 @@ actor CredencialesCRUD {
 			idCarrera: Nat32, 
 			semestre: Nat8, 
 			sexo: Text,
+			idAlumno: Text
 			// image: ImageObject
 		) : async () {
 		Debug.print("aqui");
 		
 		// let idAlumno = Principal.fromText(curp # "-" # matricula # "-" # nombre # "-" # primerAp # "-" # segundoAp );
+		
 
 		let alumno = {
 			// idAlumno = idAlumno;
@@ -216,12 +227,13 @@ actor CredencialesCRUD {
 			idCarrera = idCarrera;
 			semestre = semestre;
 			sexo = sexo;
+			idAlumno: idAlumno;
 			// image = image
 		};
 
 		listaAlumnos.put(Nat32.toText(generaAlumnoID()), 
 		alumno);
-		Debug.print("Se egistró el alumno: "  # Nat32.toText(carreraID));
+		Debug.print("Se registró el alumno: "  # Nat32.toText(carreraID));
 		return ();
 	};
 
@@ -248,6 +260,7 @@ actor CredencialesCRUD {
 			idCarrera: Nat32, 
 			semestre: Nat8, 
 			sexo: Text,
+			idAlumno: Text,
 			image: ImageObject
 
 		) : async Bool {
@@ -270,7 +283,8 @@ actor CredencialesCRUD {
 					idCarrera = idCarrera;
 					semestre = semestre;
 					sexo = sexo;
-					image = image
+					idAlumno = alumnoActual.idAlumno;
+					image = image;
 				};
 				listaAlumnos.put(id, nuevoAlumno);
 				Debug.print("alumno actualizada: " # id);
