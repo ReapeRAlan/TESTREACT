@@ -4,8 +4,10 @@ import React from 'react';
 import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
 import ConsultaAlumnos from './components/ConsultaAlumnos';
 import CargaAlumnos from './components/CargaAlumnos';
-import Inicio from './components/inicio';
+import Inicio from './components/Inicio';
 import './styles/commonStyles.css'; 
+import Login from './components/Login';
+
 
 function Nav() {
   return (
@@ -23,6 +25,7 @@ function App() {
         <Route path="/" element={<Inicio />} />
         <Route path="/consultar" element={<ConsultaAlumnos />} />
         <Route path="/cargar" element={<CargaAlumnos />} />
+        <Route path="/login" element={<Login />} />
       </Routes>
     </Router>
   );
